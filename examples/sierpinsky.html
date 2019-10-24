@@ -198,7 +198,7 @@
 
 				} );
 
-				gui.add( params, 'itération', 0, 5).min(1).max(6).step(1).onFinishChange( function ( val ){
+				gui.add( params, 'itération', 0, 6).step(1).onFinishChange( function ( val ){
 					iter = val;
 					clear_group(group);
 					SierpinskyPyramid(x,y,z,size,iter);
