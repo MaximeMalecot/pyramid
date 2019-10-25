@@ -22,7 +22,7 @@
 
 			var renderer, scene, camera, spotLight, gui;
 
-			var iter = 4;
+			var iter = 0;
 			var size = 40;
 			var y = 5;
 			var x = 0;
@@ -62,11 +62,12 @@
 				scene.add( ambient );
 
 				spotLight = new THREE.SpotLight( 0xffffff, 1 );
-				spotLight.position.set( 15, 100, 35 );
+				spotLight.position.set( -100, 100, 0 );
 				spotLight.angle = Math.PI / 4;
 				spotLight.penumbra = 0.5;
 				spotLight.decay = 2;
-				spotLight.distance = 200;
+				spotLight.distance = 400;
+
 
 				spotLight.castShadow = true;
 				spotLight.shadow.mapSize.width = 1024;
@@ -74,7 +75,7 @@
 				spotLight.shadow.camera.near = 10;
 				spotLight.shadow.camera.far = 200;
 				scene.add( spotLight );
-				spotLight.lookAt(0,0,0);
+				spotLight.lookAt(100,0,0);
 
 
 /////////////////////////////////////////////////////////////Sol/////////////////////////////////////////////////
@@ -122,6 +123,7 @@
 				}
 				group.position.y = 10;
 				scene.add(group);
+				console.log(group.position);
 			}
 
 
