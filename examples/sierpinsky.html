@@ -26,7 +26,7 @@
 			var size = 40;
 			var y = 5;
 			var x = 0;
-			var z =0;
+			var z = 0;
 			var group = new THREE.Group();
 
 			function clear_group(group){
@@ -104,14 +104,15 @@
 			function SierpinskyPyramid(x, y, z, size, it, lvl = 0){
 
 				if (lvl == it){
-					var coneGeometry = new THREE.ConeGeometry( size, size, 3 );
-					var coneMaterial = new THREE.MeshStandardMaterial( {color: 0x4080ff} );
-					var cone = new THREE.Mesh( coneGeometry, coneMaterial );
+					var pyramidGeometry = new THREE.ConeGeometry( size, size, 4 );
+					var pyramidMaterial = new THREE.MeshStandardMaterial( {color: 0x4080ff} );
+					var pyramid = new THREE.Mesh( pyramidGeometry, pyramidMaterial );
 
-					cone.position.set(x,y,z);
-					cone.receiveShadow = true;
-					cone.castShadow = true;
-					group.add( cone );
+					pyramid.position.set(x,y,z);
+					pyramid.receiveShadow = true;
+					pyramid.castShadow = true;
+					pyramid.rotation.y = Math.PI / 4;
+					group.add( pyramid );
 				}
 				else {
 					var r = size / 2.84;
